@@ -37,10 +37,11 @@ class GeminiAPIManager:
 
 def main():
         st.title('Text Generation using Gemini-AI')
-        with st.container(border=True): GeminiAPIManager().gemini_api_input()
+        with st.container(border=True): 
+                gemini_api = st.text_input('Input Gemini API')
         input_text = st.text_area('Input text you want answer')
         if len(input_text) > 0:
-                genai.configure(api_key=st.session_state.gemini_api_key)
+                genai.configure(api_key=gemini_api)
                 # gemini_version = 'models/gemini-1.5-pro-latest'
                 gemini_version = 'models/gemini-pro'
                 model = genai.GenerativeModel(gemini_version)
