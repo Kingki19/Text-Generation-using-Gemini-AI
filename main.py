@@ -42,7 +42,7 @@ def main():
         if len(input_text) > 0:
                 genai.configure(api_key=st.session_state.gemini_api_key)
                 # gemini_version = 'models/gemini-1.5-pro-latest'
-                gemini_version = 'models/gemini-pro-vision'
+                gemini_version = 'models/gemini-pro'
                 model = genai.GenerativeModel(gemini_version)
                 response = model.generate_content(input_text)
                 st.markdown(response.text)
